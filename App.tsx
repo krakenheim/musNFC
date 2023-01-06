@@ -8,20 +8,53 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // npm install @react-navigation/bottom-tabs
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
+// * Screens
 import ScanScreen from "./components/screens/ScanScreen";
-import AnotherScreen from "./components/screens/AnotherScreen";
-import LastScreen from "./components/screens/LastScreen";
+import ProfileScreen from "./components/screens/ProfileScreen";
+import CollectionScreen from "./components/screens/CollectionScreen";
+
+// *  Screen Names
+const NfcName = "Scan";
+const CollectionName = "Collection";
+const ProfileName = "Profile";
+
+// ! icon names scan-circle, library, persons
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Scan">
-        <Tab.Screen name="Another" component={AnotherScreen}/>
-        <Tab.Screen name="Scan" component={ScanScreen} />
-        <Tab.Screen name="Last" component={LastScreen}/>
+      <Tab.Navigator
+        initialRouteName={NfcName}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            let rn = route.name;
+
+            if (rn === NfcName) {
+              iconName = focused ? "scan-circle" : "scan-circle-outline";
+            } else if (rn === CollectionName) {
+              iconName = focused ? "library" : "library-outline";
+            } else if (rn === ProfileName) {
+              iconName = focused ? "person" : "person-outline";
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+
+          activeTintColor: "blue",
+          inactiveTintColor: "grey",
+          labelStyle: { paddingBottom: 10, fontSize: 10 },
+          style: { padding: 10, height: 70 },
+        })}
+      >
+        <Tab.Screen name={ProfileName} component={ProfileScreen} />
+        <Tab.Screen name={NfcName} component={ScanScreen} />
+        <Tab.Screen name={CollectionName} component={CollectionScreen} />
+
       </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
