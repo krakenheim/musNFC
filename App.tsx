@@ -1,19 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const onPress = () => {
-  console.log("TouchableOpacity pressed!")
-}
+const readNfc = () => {
+  console.log("TouchableOpacity pressed!");
+};
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
-        <Text
-          style={styles.butText}
-        >
-          Scan {"\n"} NFC
-        </Text>
+      <TouchableOpacity style={styles.button} onPress={readNfc}>
+        <Text style={styles.butText}>Scan {"\n"} NFC</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
