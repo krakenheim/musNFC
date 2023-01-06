@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+const onPress = () => {
+  console.log("TouchableOpacity pressed!")
+}
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text
+          style={styles.butText}
+        >
+          Scan {"\n"} NFC
+        </Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +23,26 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    height: 100,
+    borderRadius: 50,
+    aspectRatio: 1,
+    backgroundColor: "black",
+    opacity: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  butText: {
+    flex: 1,
+    textAlign: "center",
+    textAlignVertical: "center",
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
   },
 });
