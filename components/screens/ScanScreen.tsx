@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+
 import React from 'react'
 
 
@@ -6,7 +7,7 @@ const readNfc = () => {
   console.log("TouchableOpacity pressed!");
 };
 
-export default function ScanScreen() {
+export default function ScanScreen({navigation}) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={readNfc}>
