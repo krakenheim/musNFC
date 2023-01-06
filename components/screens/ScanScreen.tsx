@@ -1,16 +1,35 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import NfcManager, { NfcTech } from "react-native-nfc-manager";
 
 import React from 'react'
 
 
-const readNfc = () => {
+const nfcTestPress= () => {
   console.log("TouchableOpacity pressed!");
 };
 
+
+NfcManager.start();
+
+
 export default function ScanScreen({navigation}) {
+
+  async function readNdef() {
+    try {
+      await NfcManager.requestTechnology(NfcTech.Ndef);
+
+      const tag = await NfcManager.getTag();
+      console.warn("tag found", tag);
+    } catch (e) {
+      console.warn("Something went wrong", e);
+    } finally {
+      NfcManager.cancelTechnologyRequest();
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={readNfc}>
+      <TouchableOpacity style={styles.button} onPress={readNdef}>
         <Text style={styles.butText}>Scan {"\n"} NFC</Text>
       </TouchableOpacity>
     </View>
