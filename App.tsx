@@ -28,7 +28,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={NfcName}
+        
+      initialRouteName={NfcName}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -44,17 +45,19 @@ export default function App() {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-
-          activeTintColor: "blue",
-          inactiveTintColor: "grey",
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70 },
+          
+            tabBarActiveTintColor: "blue",
+            tabBarInactiveTintColor: "grey",
+            labelStyle: { paddingBottom: 10, fontSize: 10 },
+            tabBarStyle: { paddingBottom: 10, paddingTop: 10, height: 65},
+          
+         
         })}
+      
       >
         <Tab.Screen name={ProfileName} component={ProfileScreen} />
         <Tab.Screen name={NfcName} component={ScanScreen} />
         <Tab.Screen name={CollectionName} component={CollectionScreen} />
-
       </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
