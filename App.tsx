@@ -10,6 +10,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import ScanScreen from "./components/screens/ScanScreen";
 import AnotherScreen from "./components/screens/AnotherScreen";
+import LastScreen from "./components/screens/LastScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen name="Scan" component={ScanScreen} />
         <Tab.Screen name="Another" component={AnotherScreen}/>
+        <Tab.Screen name="Last" component={LastScreen}/>
       </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
