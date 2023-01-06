@@ -1,3 +1,4 @@
+//! Credits for the tab navigation is https://reactnavigation.org/docs/bottom-tab-navigator/#initialroutename and https://www.youtube.com/watch?v=AnjyzruZ36E&t=607s
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 // npm install @react-navigation/native
@@ -17,9 +18,9 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Scan" component={ScanScreen} />
+      <Tab.Navigator initialRouteName="Scan">
         <Tab.Screen name="Another" component={AnotherScreen}/>
+        <Tab.Screen name="Scan" component={ScanScreen} />
         <Tab.Screen name="Last" component={LastScreen}/>
       </Tab.Navigator>
       <StatusBar style="auto" />
