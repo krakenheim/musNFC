@@ -14,6 +14,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import ScanScreen from "./components/screens/ScanScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import CollectionScreen from "./components/screens/CollectionScreen";
+import PersonalScreen from "./components/screens/PersonalScreen"
 
 // *  Screen Names
 const NfcName = "Scan";
@@ -45,7 +46,7 @@ export default function App() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
 
-          tabBarActiveTintColor: "blue",
+          tabBarActiveTintColor: "#3f51b5",
           tabBarInactiveTintColor: "grey",
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           tabBarStyle: { paddingBottom: 10, paddingTop: 10, height: 65 },
@@ -53,10 +54,11 @@ export default function App() {
       >
         <Tab.Screen
           name={ProfileName}
-          component={ProfileScreen}
+          component={PersonalScreen}
           options={{
             headerTransparent: true,
             headerTitleAlign: "center",
+            headerShown: false,
           }}
         />
         <Tab.Screen
@@ -65,6 +67,7 @@ export default function App() {
           options={{
             headerTransparent: true,
             headerTitleAlign: "center",
+            headerTintColor: "#3f51b5",
           }}
         />
         <Tab.Screen
@@ -73,6 +76,7 @@ export default function App() {
           options={{
             headerTransparent: true,
             headerTitleAlign: "center",
+            headerTintColor: "#3f51b5",
           }}
         />
       </Tab.Navigator>
