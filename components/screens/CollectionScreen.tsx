@@ -21,6 +21,7 @@ export default function CollectionScreen () {
         "https://aros.dk/media/2282/aros_at_2709_foto_anders_traerup.jpg?center=0.51,0.70666666666666667&mode=crop&width=1200&height=630&rnd=132116367640000000",
       title: "Aros",
       text: "Lorem ipsum dolor sit amet",
+      
     },
     {
       id: "2",
