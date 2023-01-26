@@ -18,38 +18,39 @@ export default function CollectionScreen () {
     {
       id: "1",
       image:
+        "https://www.museumskanderborg.dk/admin/public/getimage.ashx?Image=/Files/Billeder/vildsvin.jpg&Resolution=72&Compression=90&Width=1000",
+      title: "Museum Skanderborg",
+      text: "Lorem ipsum dolor sit amet",
+    },
+    {
+      id: "2",
+      image:
         "https://aros.dk/media/2282/aros_at_2709_foto_anders_traerup.jpg?center=0.51,0.70666666666666667&mode=crop&width=1200&height=630&rnd=132116367640000000",
       title: "Aros",
       text: "Lorem ipsum dolor sit amet",
     },
     {
-      id: "2",
+      id: "3",
       image:
         "https://natmus.dk/typo3temp/assets/images/csm_nationalmuseet_400_220_489276c07a_0c9472fcaf.jpg",
       title: "NatMus",
       text: "Lorem ipsum dolor sit amet",
     },
     {
-      id: "3",
+      id: "4",
       image:
         "https://www.moesgaardmuseum.dk/media/2214/moesgaard-museum-close-up-of-the-roof-photo-moesgaard-museum.jpg?anchor=center&mode=crop&width=1120&heightratio=0.5619747899159663865546218487&format=jpg&quality=80&slimmage=true&rnd=131746739230000000",
       title: "Moesgaard Museum",
       text: "Lorem ipsum dolor sit amet",
     },
     {
-      id: "4",
+      id: "5",
       image:
         "https://natmus.dk/typo3temp/assets/images/csm_1_Jelling_foto_roberto_fortuna169_510c9f5a9f_de852f6744.jpg",
       title: "Kongernes Jelling",
       text: "Lorem ipsum dolor sit amet",
     },
-    {
-      id: "5",
-      image:
-        "https://www.museumskanderborg.dk/admin/public/getimage.ashx?Image=/Files/Billeder/vildsvin.jpg&Resolution=72&Compression=90&Width=1000",
-      title: "Museum Skanderborg",
-      text: "Lorem ipsum dolor sit amet",
-    },
+    
   ];
 
   const renderItem = ({ item }) => (
