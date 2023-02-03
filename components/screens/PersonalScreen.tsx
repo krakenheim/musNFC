@@ -31,7 +31,7 @@ export default function PersonalScreen() {
             source={require("../../assets/images/profilePic.jpg")}
           />
         </TouchableOpacity>
-        <Text style={styles.nameText}>John Doe</Text>
+        <Text style={styles.nameText}>Mig</Text>
         <View style={styles.stats}>
           <View style={styles.stat}>
             <Text style={styles.statLabel}>Followers</Text>
