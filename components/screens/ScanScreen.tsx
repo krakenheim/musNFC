@@ -89,7 +89,7 @@ export default function ScanScreen({ navigation }) {
       setNfcTag(tag.id);
       setModalVisible(true);
       //openModal(nfcTag);
-      Alert.alert("tag found", JSON.stringify(nfcTag));
+      /* Alert.alert("tag found", JSON.stringify(nfcTag)); */
     } catch (e) {
       console.warn("Something went wrong", e);
     } finally {

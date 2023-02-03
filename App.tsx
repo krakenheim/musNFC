@@ -1,6 +1,6 @@
 //! Credits for the tab navigation is https://reactnavigation.org/docs/bottom-tab-navigator/#initialroutename and https://www.youtube.com/watch?v=AnjyzruZ36E&t=607s
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet} from "react-native";
 // npm install @react-navigation/native
 // npx expo install react-native-screens react-native-safe-area-context
 import { NavigationContainer } from "@react-navigation/native";
