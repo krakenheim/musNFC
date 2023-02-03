@@ -111,7 +111,7 @@ export default function ScanScreen({ navigation }) {
         <TouchableOpacity style={styles.button} onPress={readNdef}>
           <Text style={styles.butText}>Scan {"\n"} NFC</Text>
         </TouchableOpacity>
-        <Text style={{}}> Version 1.0.20</Text>
+        <Text style={{}}> Version 1.0.21</Text>
       </View>
 
       <Modal animationType="slide" transparent={false} visible={modalVisible}>
