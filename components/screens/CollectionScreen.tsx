@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, FlatList, StyleSheet, Modal, TouchableOpacity} from "react-native";
+import { View, Text, Image, FlatList, StyleSheet, Modal, TouchableOpacity, ScrollView} from "react-native";
 
 export default function CollectionScreen () {
   const [modalVisible, setModalVisible] = useState(false);
@@ -49,6 +49,39 @@ export default function CollectionScreen () {
         "https://www.museumskanderborg.dk/admin/public/getimage.ashx?Image=/Files/Billeder/vildsvin.jpg&Resolution=72&Compression=90&Width=1000",
       title: "Museum Skanderborg",
       text: "Lorem ipsum dolor sit amet",
+      savedImg: require("../../assets/images/hjelm.jpg"),
+      savedTitle: "Hjelm fra 2. verdenskrig",
+      savedText:
+        "Denne hjem er fra en falden soldat, som oprindeligt boede i Skanderborg. Under 2. verdenskrig blev soldaten sendt til vestfronten...",
+      savedImg2: require("../../assets/images/pilespids.jpg"),
+      savedTitle2: "Pilespids fra stenalderen",
+      savedText2:
+        "Denne pilespids er fundet ved Rinkloster, og er brugt som pilespids til at nedlægge vildsvin",
+      savedImg3: require("../../assets/images/perler.jpg"),
+      savedTitle3: "Perler",
+      savedText3: "Perlerne er blevet brugt til særlige begivenheder.",
+    },
+  ];
+
+  const GEMDATA = [
+    {
+      id: "1",
+      image: require("../../assets/images/hjelm.jpg"),
+      title: "Hjelm fra 2. verdenskrig",
+      text: "Denne hjem er fra en falden soldat, som oprindeligt boede i Skanderborg. Under 2. verdenskrig blev soldaten sendt til vestfronten...",
+    
+    },
+    {
+      id: "2",
+      image: require("../../assets/images/pilespids.jpg"),
+      title: "Pilespids fra stenalderen",
+      text: "Denne pilespids er fundet ved Rinkloster, og er brugt som pilespids til at nedlægge vildsvin",
+    },
+    {
+      id: "3",
+      image: require("../../assets/images/perler.jpg"),
+      title: "Perler",
+      text: "Perlerne er blevet brugt til særlige begivenheder.",
     },
   ];
 
@@ -72,21 +105,47 @@ export default function CollectionScreen () {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         contentContainerStyle={styles.list}
       />
       <Modal animationType="slide" transparent={false} visible={modalVisible}>
         <View style={styles.modalContainer}>
           <View style={styles.modalHeader}>
             <Text style={styles.modalHeaderText}>
-              {modalItem ? modalItem.title : ''}
+              {modalItem ? modalItem.title : ""}
             </Text>
           </View>
-          <View style={styles.modalBody}>
+          <ScrollView style={styles.modalBody}>
             {modalItem ? (
-              <Text style={styles.modalText}>{modalItem.additionalInfo}</Text>
+              <Image
+                style={(styles.modalImgExtra)}
+                source={modalItem.savedImg}
+              ></Image>
             ) : null}
-          </View>
+            {modalItem ? (
+              <Text style={styles.modalText}>{modalItem.savedText}</Text>
+            ) : null}
+
+            {modalItem ? (
+              <Image
+                style={(styles.modalImgExtra)}
+                source={modalItem.savedImg2}
+              ></Image>
+            ) : null}
+            {modalItem ? (
+              <Text style={styles.modalText}>{modalItem.savedText2}</Text>
+            ) : null}
+
+            {modalItem ? (
+              <Image
+                style={(styles.modalImgExtra)}
+                source={modalItem.savedImg3}
+              ></Image>
+            ) : null}
+            {modalItem ? (
+              <Text style={styles.modalText}>{modalItem.savedText3}</Text>
+            ) : null}
+          </ScrollView>
           <View style={styles.modalFooter}>
             <TouchableOpacity onPress={closeModal} style={styles.modalButton}>
               <Text style={styles.modalButtonText}>Close</Text>
@@ -153,5 +212,11 @@ const styles = StyleSheet.create({
   modalButtonText: {
     color: "#fff",
     fontSize: 16,
+  },
+  modalImgExtra: {
+    marginTop: 20,
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
   },
 });
